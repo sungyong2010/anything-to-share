@@ -1,0 +1,9 @@
+데이타 범위는 O7:O980 인데
+필터링된 값에서 고유값 개수 구하는 수식은?
+
+=SUM(IF(FREQUENCY(IF(SUBTOTAL(3,OFFSET(O7,ROW(O7:O980)-ROW(O7),0,1)),MATCH(O7:O980,O7:O980,0)),ROW(O7:O980)-ROW(O7)+1),1))
+
+
+수식 탭 → 이름 정의(Name Manager) 클릭
+MyRange=Sheet1!$O$7:$O$980 
+=SUM(IF(FREQUENCY(IF(SUBTOTAL(3,OFFSET(MyRange,ROW(MyRange)-ROW(INDEX(MyRange,1)),0,1)),MATCH(MyRange,MyRange,0)),ROW(MyRange)-ROW(INDEX(MyRange,1))+1),1))
